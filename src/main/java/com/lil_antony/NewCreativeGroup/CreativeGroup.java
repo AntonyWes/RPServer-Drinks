@@ -15,11 +15,14 @@ import net.minecraftforge.fml.common.Mod;
 public class CreativeGroup {
 
     public static CreativeModeTab DRINKS;
+    public static CreativeModeTab FUMIGANT;
 
     @SubscribeEvent
     public static void RegisterCreativeTabs(CreativeModeTabEvent.Register event) {
         DRINKS = event.registerCreativeModeTab(new ResourceLocation(RPMOD.MODID, "drinks"),
                 builder -> builder.icon(() -> new ItemStack(Items.ROM.get())).title(Component.translatable("creativemodetab.drinks")));
+        FUMIGANT = event.registerCreativeModeTab(new ResourceLocation(RPMOD.MODID, "fumigant"),
+                builder -> builder.icon(() -> new ItemStack(Items.ROM.get())).title(Component.translatable("creativemodetab.fumigant")));
 
     }
 }

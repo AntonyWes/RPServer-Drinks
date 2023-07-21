@@ -1,6 +1,7 @@
 package com.lil_antony.item;
 
 import com.lil_antony.RPMOD.RPMOD;
+import com.lil_antony.item.custom.SmokeItem;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
@@ -87,6 +88,8 @@ public class Items {
 
     public static final RegistryObject<Item> SPIRITELEMENT = ITEMS.register("spiritelement",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> CIGARETTES = ITEMS.register("cigarettes",
+            () -> new SmokeItem(new Item.Properties().stacksTo(1)));
 
 
 }

@@ -55,6 +55,9 @@ public class RPMOD
             event.accept(Items.VINOGRADKOLOMBAR);
             event.accept(Items.SPIRITELEMENT);
         }
+        if (event.getTab() == CreativeGroup.FUMIGANT) {
+            event.accept(Items.CIGARETTES);
+        }
     }
 
 }
