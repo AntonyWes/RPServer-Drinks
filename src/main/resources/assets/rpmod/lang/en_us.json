@@ -1,0 +1,20 @@
+{
+  "item.rpmod.rom": "Rom",
+  "item.rpmod.beer": "Beer",
+  "item.rpmod.konyak": "Сognac",
+  "item.rpmod.vino": "Wine",
+  "item.rpmod.hmel": "Hop",
+  "item.rpmod.vinograd": "Grape",
+  "item.rpmod.smallvinograd": "Piece of grape",
+  "item.rpmod.vinogradkolombar": "Kolombar grape",
+  "item.rpmod.applejuice": "Apple juice",
+  "item.rpmod.melonjuice": "Watermelon juice",
+  "item.rpmod.berriesjuice": "Berry juice",
+  "item.rpmod.rowberriesjuicee": "Glow berry juice",
+  "item.rpmod.carrotjuice": "Carrot juice",
+  "item.rpmod.spiritmilk": "Spirit`s milk",
+  "item.rpmod.elfpotion": "Elf potion",
+  "item.rpmod.spiritelement": "Wolf element",
+
+  "creativemodetab.drinks": "Drinks"
+}
