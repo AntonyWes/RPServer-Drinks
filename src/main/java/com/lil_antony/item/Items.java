@@ -70,7 +70,6 @@ public class Items {
                             new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 3600), 1.0f).effect(
                             new MobEffectInstance(MobEffects.REGENERATION, 2400), 1.0f).build())));
 
-
     public static final RegistryObject<Item> VINOGRAD = ITEMS.register("vinograd",
             () -> new Item(new Item.Properties()));
 
@@ -88,7 +87,7 @@ public class Items {
 
     public static final RegistryObject<Item> SPIRITELEMENT = ITEMS.register("spiritelement",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> CIGARETTES = ITEMS.register("cigarettes",
+    public static final RegistryObject<Item> SMOKINGPIPE = ITEMS.register("pipe",
             () -> new SmokeItem(new Item.Properties().stacksTo(1)));
 
 
