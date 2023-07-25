@@ -39,17 +39,22 @@ public class SmokeItem extends Item {
             Vec3 LookAngle = player.getLookAngle();
 
             for(int i = 0; i <= positionClicked.y + 64; i++) {
-                spawnFoundParticles(level, positionClicked, LookAngle);
-                player.getCooldowns().addCooldown(this, 60);
+                SpawnSmoke(level, positionClicked, LookAngle);
+                player.getCooldowns().addCooldown(this, 40);
                 break;
             }
+
         }
+
+        player.getItemInHand(InteractionHand.MAIN_HAND).hurtAndBreak(1, player,
+                player1 -> player1.broadcastBreakEvent(player1.getUsedItemHand()));
+
 
         return super.use(level, player, interactionHand);
     }
 
-    private void spawnFoundParticles(Level level, Vec3 positionClicked, Vec3 Look) {
-        for(int i = 0; i < 10; i++) {
+    private void SpawnSmoke(Level level, Vec3 positionClicked, Vec3 Look) {
+        for(int i = 0; i < 40; i++) {
                 level.addParticle(ParticleTypes.SMOKE,
                         positionClicked.x - 0.1d, positionClicked.y - 0.1, positionClicked.z,
                         Look.x / 10, Look.y / 10, Look.z / 10);

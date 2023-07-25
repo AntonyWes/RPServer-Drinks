@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "rpmod:item/pipe"
+    "layer0": "rpmod:item/tobacco"
   }
 }

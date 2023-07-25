@@ -57,6 +57,7 @@ public class RPMOD
         }
         if (event.getTab() == CreativeGroup.FUMIGANT) {
             event.accept(Items.SMOKINGPIPE);
+            event.accept(Items.TABACCO);
         }
     }
 
