@@ -49,8 +49,8 @@ public class SmokeItem extends Item {
             }
             System.out.println("1");
         }
-        else if (player.getItemInHand(InteractionHand.MAIN_HAND).getDamageValue() >= 6 && player.getItemInHand(InteractionHand.MAIN_HAND).getDamageValue() <= 15){
-            for(int i = 0; i < 10; i++) {
+        else if (player.getItemInHand(InteractionHand.MAIN_HAND).getDamageValue() >= 6 && player.getItemInHand(InteractionHand.MAIN_HAND).getDamageValue() <= 15) {
+            for (int i = 0; i < 10; i++) {
                 level.addParticle(ParticleTypes.SMOKE,
                         positionClicked.x - 0.1d, positionClicked.y - 0.1, positionClicked.z,
                         Look.x / 5, Look.y / 5, Look.z / 5);
