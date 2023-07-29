@@ -91,7 +91,7 @@ public class Items {
     public static  final RegistryObject<Item> TABACCO = ITEMS.register("tobacco",
             () -> new Item(new Item.Properties().stacksTo(16)));
     public static final RegistryObject<Item> SMOKINGPIPE = ITEMS.register("pipe",
-            () -> new SmokeItem(new Item.Properties().stacksTo(1).durability(20)));
+            () -> new SmokeItem(new Item.Properties().stacksTo(1).durability(20).setNoRepair()));
 
 
 
