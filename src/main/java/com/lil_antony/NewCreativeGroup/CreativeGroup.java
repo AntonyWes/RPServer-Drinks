@@ -20,9 +20,9 @@ public class CreativeGroup {
     @SubscribeEvent
     public static void RegisterCreativeTabs(CreativeModeTabEvent.Register event) {
         DRINKS = event.registerCreativeModeTab(new ResourceLocation(RPMOD.MODID, "drinks"),
-                builder -> builder.icon(() -> new ItemStack(Items.ROM.get())).title(Component.translatable("creativemodetab.drinks")));
+                builder -> builder.icon(() -> new ItemStack(Items.RUM.get())).title(Component.translatable("creativemodetab.drinks")));
         FUMIGANT = event.registerCreativeModeTab(new ResourceLocation(RPMOD.MODID, "fumigant"),
-                builder -> builder.icon(() -> new ItemStack(Items.ROM.get())).title(Component.translatable("creativemodetab.fumigant")));
+                builder -> builder.icon(() -> new ItemStack(Items.SMOKINGPIPE.get())).title(Component.translatable("creativemodetab.fumigant")));
 
     }
 }

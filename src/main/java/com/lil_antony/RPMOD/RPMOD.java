@@ -23,7 +23,6 @@ public class RPMOD
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         Items.ITEMS.register(modEventBus);
-
         ModLootModifeires.register(modEventBus);
 
         modEventBus.addListener(this::commonSetup);
@@ -38,7 +37,7 @@ public class RPMOD
 
     private void addCreative(CreativeModeTabEvent.BuildContents event) {
         if (event.getTab() == CreativeGroup.DRINKS) {
-            event.accept(Items.ROM);
+            event.accept(Items.RUM);
             event.accept(Items.KONYAK);
             event.accept(Items.BEER);
             event.accept(Items.VINO);

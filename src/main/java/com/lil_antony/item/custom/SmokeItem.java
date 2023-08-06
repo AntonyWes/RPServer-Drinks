@@ -14,56 +14,50 @@ import static com.lil_antony.item.Items.SMOKINGPIPE;
 
 public class SmokeItem extends Item {
     Random rand;
+    float num = 1.0F;
 
-    public SmokeItem(Properties properties) {
+    public SmokeItem(Properties properties, float mun) {
         super(properties);
+        num = mun;
     }
 
     @Override
-    public @NotNull InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand interactionHand) {
+    public @NotNull InteractionResultHolder<ItemStack> use(Level level, @NotNull Player player, @NotNull InteractionHand interactionHand) {
         if(level.isClientSide() && interactionHand == InteractionHand.MAIN_HAND) {
             Vec3 positionClicked = player.getEyePosition();
             Vec3 LookAngle = player.getLookAngle();
-
             for(int i = 0; i <= positionClicked.y + 64; i++) {
-                SpawnSmoke(level, positionClicked, LookAngle, player);
+                SpawnSmoke(level, player);
                 player.getCooldowns().addCooldown(this, 40);
                 break;
             }
-
         }
-
         player.getItemInHand(InteractionHand.MAIN_HAND).hurtAndBreak(1, player,
                 player1 -> player1.broadcastBreakEvent(player1.getUsedItemHand()));
-
-
         return super.use(level, player, interactionHand);
     }
 
-    private void SpawnSmoke(Level level, Vec3 positionClicked, Vec3 Look, Player player) {
-        if (player.getItemInHand(InteractionHand.MAIN_HAND).getDamageValue() >= 16 && player.getItemInHand(InteractionHand.MAIN_HAND).getDamageValue() <= 20){
-            for(int i = 0; i < 1; i++) {
+    void SpawnSmoke(Level level, Player player) {
+        Vec3 MousePosition = player.getEyePosition();
+        Vec3 LookAngle = player.getLookAngle();
+        if (player.getItemInHand(InteractionHand.MAIN_HAND).getDamageValue() >= 16 && player.getItemInHand(InteractionHand.MAIN_HAND).getDamageValue() <= 20) {
+            for (int i = 0; i < 1 * num; i++) {
                 level.addParticle(ParticleTypes.SMOKE,
-                        positionClicked.x - 0.1d, positionClicked.y - 0.1, positionClicked.z,
-                        Look.x / 10, Look.y / 10, Look.z / 10);
+                        MousePosition.x - 0.1d, MousePosition.y - 0.1, MousePosition.z,
+                        LookAngle.x / 10, LookAngle.y / 10, LookAngle.z / 10);
             }
-            System.out.println("1");
-        }
-        else if (player.getItemInHand(InteractionHand.MAIN_HAND).getDamageValue() >= 6 && player.getItemInHand(InteractionHand.MAIN_HAND).getDamageValue() <= 15) {
-            for (int i = 0; i < 10; i++) {
+        } else if (player.getItemInHand(InteractionHand.MAIN_HAND).getDamageValue() >= 6 && player.getItemInHand(InteractionHand.MAIN_HAND).getDamageValue() <= 15) {
+            for (int i = 0; i < 10 * num; i++) {
                 level.addParticle(ParticleTypes.SMOKE,
-                        positionClicked.x - 0.1d, positionClicked.y - 0.1, positionClicked.z,
-                        Look.x / 5, Look.y / 5, Look.z / 5);
+                        MousePosition.x - 0.1d, MousePosition.y - 0.1, MousePosition.z,
+                        LookAngle.x / 5, LookAngle.y / 5, LookAngle.z / 5);
             }
-            System.out.println("2");
-        }
-        else {
-            for(int i = 0; i < 35; i++) {
+        } else {
+            for (int i = 0; i < 35 * num; i++) {
                 level.addParticle(ParticleTypes.SMOKE,
-                        positionClicked.x - 0.1d, positionClicked.y - 0.1, positionClicked.z,
-                        Look.x / 5, Look.y / 5, Look.z / 5);
+                        MousePosition.x - 0.1d, MousePosition.y - 0.1, MousePosition.z,
+                        LookAngle.x / 4, LookAngle.y / 4, LookAngle.z / 4);
             }
-            System.out.println("3");
         }
     }
 
