@@ -5,7 +5,7 @@ import com.lil_antony.item.Items;
 import com.lil_antony.loot.ModLootModifeires;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.event.CreativeModeTabEvent;
+import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -22,10 +22,10 @@ public class RPMOD
     {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
 
+        CreativeGroup.register(modEventBus);
+
         Items.ITEMS.register(modEventBus);
         ModLootModifeires.register(modEventBus);
-
-        modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
 
@@ -33,10 +33,8 @@ public class RPMOD
 
     }
 
-    private void commonSetup(final FMLCommonSetupEvent event) {}
-
-    private void addCreative(CreativeModeTabEvent.BuildContents event) {
-        if (event.getTab() == CreativeGroup.DRINKS) {
+    private void addCreative(BuildCreativeModeTabContentsEvent event) {
+        if (event.getTab() == CreativeGroup.DRINKS.get()) {
             event.accept(Items.RUM);
             event.accept(Items.KONYAK);
             event.accept(Items.BEER);
@@ -54,7 +52,7 @@ public class RPMOD
             event.accept(Items.VINOGRADKOLOMBAR);
             event.accept(Items.SPIRITELEMENT);
         }
-        if (event.getTab() == CreativeGroup.FUMIGANT) {
+        if (event.getTab() == CreativeGroup.FUMIGANT.get()) {
             event.accept(Items.SMOKINGPIPE);
             event.accept(Items.TABACCO);
         }

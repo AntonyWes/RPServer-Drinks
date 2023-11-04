@@ -10,7 +10,6 @@ import net.minecraft.world.phys.Vec3;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Random;
-import static com.lil_antony.item.Items.SMOKINGPIPE;
 
 public class SmokeItem extends Item {
     Random rand;
