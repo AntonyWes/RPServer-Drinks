@@ -1,4 +1,4 @@
-package com.lil_antony.loot;
+package com.lil_antony.datagen.loot;
 
 import com.lil_antony.RPMOD.RPMOD;
 import com.mojang.serialization.Codec;

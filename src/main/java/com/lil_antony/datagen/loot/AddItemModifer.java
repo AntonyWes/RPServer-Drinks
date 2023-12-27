@@ -1,4 +1,4 @@
-package com.lil_antony.loot;
+package com.lil_antony.datagen.loot;
 
 import com.google.common.base.Supplier;
 import com.google.common.base.Suppliers;

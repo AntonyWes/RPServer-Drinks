@@ -1,7 +1,7 @@
 package com.lil_antony.NewCreativeGroup;
 
 
-import com.lil_antony.item.Items;
+import com.lil_antony.item.ModItems;
 import com.lil_antony.RPMOD.RPMOD;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
@@ -20,9 +20,9 @@ public class CreativeGroup {
             RPMOD.MODID);
 
     public static RegistryObject<CreativeModeTab> DRINKS = CREATIVEMODETABS.register("drinks",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(Items.RUM.get())).title(Component.translatable("creativemodetab.drinks")).build());
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.RUM.get())).title(Component.translatable("creativemodetab.drinks")).build());
     public static RegistryObject<CreativeModeTab> FUMIGANT = CREATIVEMODETABS.register("fumigant",
-            () -> CreativeModeTab.builder().icon(() -> new ItemStack(Items.SMOKINGPIPE.get())).title(Component.translatable("creativemodetab.fumigant")).build());
+            () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.SMOKINGPIPE.get())).title(Component.translatable("creativemodetab.fumigant")).build());
 
 
     public static void register(IEventBus eventBus){

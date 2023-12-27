@@ -1,14 +1,17 @@
 package com.lil_antony.RPMOD;
 
 import com.lil_antony.NewCreativeGroup.CreativeGroup;
-import com.lil_antony.item.Items;
-import com.lil_antony.loot.ModLootModifeires;
+import com.lil_antony.block.ModBlocks;
+import com.lil_antony.item.ModItems;
+import com.lil_antony.datagen.loot.ModLootModifeires;
+import com.lil_antony.worldgen.tree.FoliagePlacers;
+import com.lil_antony.worldgen.tree.ModTrunkPlacerTypes;
 import com.mojang.logging.LogUtils;
+import net.minecraft.world.level.levelgen.feature.foliageplacers.FoliagePlacer;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.BuildCreativeModeTabContentsEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 
@@ -24,8 +27,13 @@ public class RPMOD
 
         CreativeGroup.register(modEventBus);
 
-        Items.ITEMS.register(modEventBus);
+        ModItems.ITEMS.register(modEventBus);
         ModLootModifeires.register(modEventBus);
+
+        ModTrunkPlacerTypes.register(modEventBus);
+        FoliagePlacers.register(modEventBus);
+
+        ModBlocks.register(modEventBus);
 
         MinecraftForge.EVENT_BUS.register(this);
 
@@ -35,26 +43,27 @@ public class RPMOD
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
         if (event.getTab() == CreativeGroup.DRINKS.get()) {
-            event.accept(Items.RUM);
-            event.accept(Items.KONYAK);
-            event.accept(Items.BEER);
-            event.accept(Items.VINO);
-            event.accept(Items.APPLEJUSE);
-            event.accept(Items.MELONJUSE);
-            event.accept(Items.BERRIESEJUSE);
-            event.accept(Items.ROWBERRIESEJUSE);
-            event.accept(Items.CARROTJUSE);
-            event.accept(Items.SPIRITMILK);
-            event.accept(Items.ELFPOTION);
-            event.accept(Items.HMEL);
-            event.accept(Items.VINOGRAD);
-            event.accept(Items.SMALLVINOGRAD);
-            event.accept(Items.VINOGRADKOLOMBAR);
-            event.accept(Items.SPIRITELEMENT);
+            event.accept(ModItems.RUM);
+            event.accept(ModItems.KONYAK);
+            event.accept(ModItems.BEER);
+            event.accept(ModItems.VINO);
+            event.accept(ModItems.APPLEJUSE);
+            event.accept(ModItems.MELONJUSE);
+            event.accept(ModItems.BERRIESEJUSE);
+            event.accept(ModItems.ROWBERRIESEJUSE);
+            event.accept(ModItems.CARROTJUSE);
+            event.accept(ModItems.SPIRITMILK);
+            event.accept(ModItems.ELFPOTION);
+            event.accept(ModItems.HMEL);
+            event.accept(ModItems.VINOGRAD);
+            event.accept(ModItems.SMALLVINOGRAD);
+            event.accept(ModItems.VINOGRADKOLOMBAR);
+            event.accept(ModItems.SPIRITELEMENT);
+            event.accept(ModBlocks.COFFE_SAPLING);
         }
         if (event.getTab() == CreativeGroup.FUMIGANT.get()) {
-            event.accept(Items.SMOKINGPIPE);
-            event.accept(Items.TABACCO);
+            event.accept(ModItems.SMOKINGPIPE);
+            event.accept(ModItems.TABACCO);
         }
     }
 
